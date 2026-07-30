@@ -40,6 +40,11 @@ body {
     min-height: 100vh;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .container {
     width: min(1120px, calc(100% - 40px));
     margin: 0 auto;
@@ -61,6 +66,7 @@ body {
 
 .brand-logo {
     max-height: 80px;
+    max-width: 100%;
     width: auto;
     object-fit: contain;
     display: block;
@@ -108,6 +114,7 @@ body {
     font-size: 1.0625rem;
     color: var(--muted);
     line-height: 1.55;
+    white-space: nowrap;
 }
 
 .card,
@@ -557,13 +564,31 @@ body {
     text-decoration: underline;
 }
 
+@media (max-width: 1024px) {
+    .brand-logo {
+        max-height: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    .brand-logo {
+        max-height: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .brand-logo {
+        max-height: 34px !important;
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        display: block;
+    }
+}
+
 @media (max-width: 720px) {
     .site-header {
         margin-bottom: 20px;
-    }
-
-    .brand-logo {
-        max-height: 70px;
     }
 
     .level-grid {
