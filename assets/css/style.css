@@ -516,6 +516,27 @@ body {
     color: var(--text);
 }
 
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    width: fit-content;
+    margin-top: 4px;
+    padding: 8px 12px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--primary-soft);
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.github-link:hover {
+    background: var(--surface-hover);
+    text-decoration: none;
+}
+
 .footer-context {
     margin: 0;
     font-size: 0.875rem;

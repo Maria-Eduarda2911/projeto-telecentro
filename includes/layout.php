@@ -40,6 +40,9 @@ function render_footer(): void
                     Projeto desenvolvido por
                     <a href="https://github.com/Maria-Eduarda2911" target="_blank" rel="noopener noreferrer">Maria Eduarda</a>
                 </p>
+                <a class="github-link" href="https://github.com/Maria-Eduarda2911" target="_blank" rel="noopener noreferrer">
+                    ↗ Ver no GitHub
+                </a>
                 <p class="footer-context">Projeto criado com carinho para ser utilizado pela equipe do Telecentro da Secretaria de Educação de Olinda.</p>
             </div>
         </footer>
