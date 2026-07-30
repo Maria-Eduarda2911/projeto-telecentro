@@ -1,22 +1,14 @@
 {
-  "version": 2,
   "builds": [
     {
-      "src": "index.php",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "."
-      }
-    },
-    {
-      "src": "**/*.php",
-      "use": "@vercel/static-build"
+      "src": "*.php",
+      "use": "vercel-php@0.6.1"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "/index.php"
+      "dest": "/$1"
     }
   ]
 }
