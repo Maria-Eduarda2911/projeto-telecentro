@@ -2,6 +2,8 @@
 
 Portal educacional em PHP puro, desenvolvido para o **Telecentro da Secretaria de Educação de Olinda**. O projeto oferece desafios interativos, uma vitrine de jogos externos e atividades desplugadas para crianças de 5 a 12 anos — com foco em simplicidade, acessibilidade e zero distrações.
 
+LINK DO PROJETO --> https://brinkeduca.infinityfree.me/index.php?i=1
+
 ---
 
 ## Contexto e impacto social
