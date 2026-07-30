@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title desc">
+  <title id="title">World</title>
+  <desc id="desc">Globo simples para atividades de inglês.</desc>
+  <rect width="320" height="180" rx="12" fill="#eefcff"/>
+  <circle cx="124" cy="82" r="44" fill="#6ec5ff"/>
+  <path d="M80 82h88M124 38c16 18 16 70 0 88M124 38c-16 18-16 70 0 88" stroke="#ffffff" stroke-width="4" fill="none"/>
+  <path d="M90 64c18 8 30 20 46 20s30-12 46-20" stroke="#ffffff" stroke-width="4" fill="none"/>
+  <rect x="192" y="52" width="74" height="58" rx="14" fill="#ffffff" stroke="#cce6f5"/>
+  <text x="229" y="89" font-family="Arial, sans-serif" font-size="22" text-anchor="middle" fill="#1f6fb2" font-weight="700">EN</text>
+</svg>

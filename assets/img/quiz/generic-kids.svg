@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 180" role="img" aria-labelledby="title desc">
+  <title id="title">Atividade</title>
+  <desc id="desc">Ilustração simples e colorida para atividades infantis.</desc>
+  <rect width="320" height="180" rx="12" fill="#f7f8fb"/>
+  <circle cx="82" cy="88" r="28" fill="#ffd166"/>
+  <circle cx="160" cy="64" r="28" fill="#7ad6a5"/>
+  <circle cx="238" cy="92" r="28" fill="#8fb8ff"/>
+  <path d="M54 132h212" stroke="#d9e1ea" stroke-width="8" stroke-linecap="round"/>
+</svg>

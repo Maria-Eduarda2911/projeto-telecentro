@@ -1,0 +1,554 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #f0f2f5;
+    --surface: #ffffff;
+    --surface-hover: #f8fafc;
+    --border: #e2e8f0;
+    --border-strong: #cbd5e1;
+    --text: #1e293b;
+    --muted: #64748b;
+    --primary: #2271b1;
+    --primary-hover: #135e96;
+    --primary-soft: #f0f6fc;
+    --success-bg: #edfaef;
+    --success-border: #b8e6bf;
+    --error-bg: #fcf0f1;
+    --error-border: #f1aeb5;
+    --radius: 8px;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+    --font: "Segoe UI", Inter, Arial, Helvetica, sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.container {
+    width: min(1120px, calc(100% - 40px));
+    margin: 0 auto;
+}
+
+.main-content {
+    padding: 32px 0 48px;
+}
+
+.page-header {
+    margin-bottom: 24px;
+}
+
+.page-header-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: clamp(1.75rem, 3.5vw, 2.25rem);
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+.eyebrow {
+    display: inline-block;
+    margin: 0 0 6px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--primary);
+}
+
+.lead {
+    max-width: 640px;
+    margin: 10px 0 0;
+    font-size: 1.0625rem;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.card,
+.intro-card,
+.notice-card,
+.subject-card,
+.challenge-summary,
+.question-card,
+.result-card,
+.answer-card,
+.game-card,
+.portal-card,
+.difficulty-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.intro-card p,
+.notice-card p,
+.subject-card p,
+.game-card p,
+.portal-card p,
+.challenge-summary p,
+.question-card h3,
+.answer-card p {
+    color: var(--muted);
+}
+
+.notice-card h2,
+.subject-card h2,
+.game-card h3,
+.portal-card h3,
+.result-card h2,
+.challenge-summary h2 {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.actions-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-height: 38px;
+    padding: 0 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.button.primary {
+    background: var(--primary);
+    color: #fff;
+    border-color: var(--primary);
+}
+
+.button.primary:hover {
+    background: var(--primary-hover);
+    border-color: var(--primary-hover);
+}
+
+.button.secondary {
+    background: var(--surface);
+    color: var(--text);
+    border-color: var(--border-strong);
+}
+
+.button.secondary:hover {
+    background: var(--surface-hover);
+    border-color: var(--border-strong);
+    color: var(--primary);
+}
+
+.back-home-button,
+.header-home-button {
+    white-space: nowrap;
+}
+
+.subjects-grid,
+.games-grid,
+.portals-grid,
+.feedback-list,
+.ideas-grid {
+    display: grid;
+    gap: 16px;
+}
+
+.subjects-grid,
+.games-grid,
+.portals-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.ideas-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    margin-top: 16px;
+}
+
+.feedback-list {
+    gap: 12px;
+}
+
+.subject-accordion,
+.wp-filter-panel {
+    overflow: hidden;
+}
+
+.subject-accordion summary,
+.wp-filter-panel summary {
+    list-style: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.subject-accordion summary::-webkit-details-marker,
+.wp-filter-panel summary::-webkit-details-marker {
+    display: none;
+}
+
+.subject-accordion summary {
+    padding: 0;
+}
+
+.subject-accordion[open] .subject-head {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.accordion-hint {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.subject-head {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.subject-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--radius);
+    display: grid;
+    place-items: center;
+    background: var(--primary-soft);
+    border: 1px solid var(--border);
+    font-size: 1.625rem;
+    flex: 0 0 auto;
+}
+
+.level-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.wp-filter-panel {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+}
+
+.wp-filter-panel summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--text);
+    background: var(--surface);
+    border-radius: var(--radius);
+    user-select: none;
+}
+
+.wp-filter-panel summary::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid var(--muted);
+    border-bottom: 2px solid var(--muted);
+    transform: rotate(45deg);
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    margin-left: 12px;
+}
+
+.wp-filter-panel[open] summary {
+    border-bottom: 1px solid var(--border);
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.wp-filter-panel[open] summary::after {
+    transform: rotate(-135deg);
+    margin-top: 4px;
+}
+
+.wp-filter-panel .filter-body {
+    padding: 16px 18px 18px;
+}
+
+.challenge-summary,
+.result-card {
+    display: grid;
+    gap: 12px;
+}
+
+.game-image {
+    margin: -20px -24px 16px;
+    border-bottom: 1px solid var(--border);
+    background: var(--bg);
+}
+
+.game-logo {
+    min-height: 100px;
+    display: grid;
+    place-items: center;
+    padding: 20px;
+}
+
+.game-logo img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 64px;
+    object-fit: contain;
+}
+
+.game-card h3 {
+    margin: 0 0 8px;
+}
+
+.portal-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 0;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.portal-card:hover {
+    border-color: var(--border-strong);
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.portal-card h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.portal-card p {
+    margin: 0;
+    flex: 1;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+}
+
+.portal-card .button {
+    align-self: flex-start;
+    margin-top: 4px;
+}
+
+.question-media {
+    margin: 0 0 16px;
+    text-align: center;
+}
+
+.question-media img {
+    display: block;
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    background: var(--bg);
+}
+
+.question-emoji {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 5rem;
+    height: 5rem;
+    font-size: 3rem;
+    line-height: 1;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.score {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.quiz-form {
+    display: grid;
+    gap: 16px;
+}
+
+.question-card {
+    margin: 0;
+}
+
+.question-card legend,
+.question-index {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--primary);
+}
+
+.question-card h3,
+.answer-card h3 {
+    margin: 8px 0 0;
+    color: var(--text);
+    font-size: 1.0625rem;
+    font-weight: 600;
+}
+
+.options-grid {
+    display: grid;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.option-item {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.option-item:hover {
+    border-color: var(--border-strong);
+    background: var(--surface-hover);
+}
+
+.option-item input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+}
+
+.submit-box {
+    padding-top: 4px;
+}
+
+.idea-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px;
+}
+
+.idea-card h3 {
+    margin: 0 0 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.idea-meta {
+    margin: 10px 0 0;
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+.idea-actions {
+    margin-top: 14px;
+}
+
+.answer-card.ok {
+    background: var(--success-bg);
+    border-color: var(--success-border);
+}
+
+.answer-card.wrong {
+    background: var(--error-bg);
+    border-color: var(--error-border);
+}
+
+.footer {
+    border-top: 1px solid var(--border);
+    background: var(--surface);
+    padding: 20px 0 24px;
+}
+
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-credit {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--text);
+}
+
+.footer-context {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--muted);
+}
+
+.footer a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+    .level-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-header-top {
+        flex-direction: column;
+    }
+
+    .header-home-button,
+    .back-home-button {
+        width: 100%;
+    }
+
+    .subjects-grid,
+    .games-grid,
+    .portals-grid {
+        grid-template-columns: 1fr;
+    }
+}
