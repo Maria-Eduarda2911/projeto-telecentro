@@ -49,6 +49,29 @@ body {
     padding: 32px 0 48px;
 }
 
+.site-header {
+    margin-bottom: 24px;
+}
+
+.brand {
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+}
+
+.brand-logo {
+    max-height: 80px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    border-radius: var(--radius);
+    transition: transform 0.2s ease;
+}
+
+.brand:hover .brand-logo {
+    transform: scale(1.05);
+}
+
 .page-header {
     margin-bottom: 24px;
 }
@@ -507,34 +530,15 @@ body {
 .footer-inner {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
 }
 
 .footer-credit {
     margin: 0;
     font-size: 0.9375rem;
     color: var(--text);
-}
-
-.github-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    width: fit-content;
-    margin-top: 4px;
-    padding: 8px 12px;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    background: var(--primary-soft);
-    color: var(--primary);
-    font-size: 0.9rem;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-.github-link:hover {
-    background: var(--surface-hover);
-    text-decoration: none;
 }
 
 .footer-context {
@@ -554,6 +558,14 @@ body {
 }
 
 @media (max-width: 720px) {
+    .site-header {
+        margin-bottom: 20px;
+    }
+
+    .brand-logo {
+        max-height: 70px;
+    }
+
     .level-grid {
         grid-template-columns: 1fr;
     }

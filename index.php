@@ -29,7 +29,7 @@ render_header($site, 'Desafios educativos', 'Escolha a matéria e a quantidade d
                     <div class="subject-icon" aria-hidden="true">📘</div>
                     <div>
                         <h2><?= e($ano) ?>º ano</h2>
-                        <p>Questões de Matemática, Português e Inglês com 5, 10 ou 15 perguntas.</p>
+                        <p>Questões de Matemática, Português e Inglês com 5, 10, 15 ou 20 perguntas.</p>
                         <span class="accordion-hint">Escolha a matéria e a quantidade</span>
                     </div>
                 </div>

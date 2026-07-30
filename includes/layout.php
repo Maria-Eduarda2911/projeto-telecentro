@@ -13,6 +13,12 @@ function render_header(array $site, string $tituloPagina, string $subtitulo = ''
     </head>
     <body>
         <main class="container main-content">
+            <header class="site-header">
+                <a class="brand" href="index.php" aria-label="Ir para a página inicial de Brinkeduca">
+                    <img src="logo.png" alt="Brinkeduca" class="brand-logo">
+                </a>
+            </header>
+
             <section class="page-header">
                 <p class="eyebrow">Portal educacional</p>
                 <div class="page-header-top">
@@ -40,9 +46,6 @@ function render_footer(): void
                     Projeto desenvolvido por
                     <a href="https://github.com/Maria-Eduarda2911" target="_blank" rel="noopener noreferrer">Maria Eduarda</a>
                 </p>
-                <a class="github-link" href="https://github.com/Maria-Eduarda2911" target="_blank" rel="noopener noreferrer">
-                    ↗ Ver no GitHub
-                </a>
                 <p class="footer-context">Projeto criado com carinho para ser utilizado pela equipe do Telecentro da Secretaria de Educação de Olinda.</p>
             </div>
         </footer>

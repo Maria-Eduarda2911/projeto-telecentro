@@ -1,101 +1,116 @@
+<div align="center">
+
 # Brinkeduca
 
-Portal educacional em PHP puro, desenvolvido para o **Telecentro da Secretaria de Educação de Olinda**. O projeto oferece desafios interativos, uma vitrine de jogos externos e atividades desplugadas para crianças de 5 a 12 anos — com foco em simplicidade, acessibilidade e zero distrações.
+[![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+[![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)](https://git-scm.com/)
+[![Status](https://img.shields.io/badge/status-concluído-brightgreen)](https://github.com/)
+
+⚙️ PHP • HTML5 • CSS3 • JavaScript • Git
+
+🧩 Portal Educacional Interativo para o Telecentro de Olinda
+
+</div>
 
 ---
 
-## Contexto e impacto social
+## Introdução
 
-O Telecentro de Olinda atende crianças e adolescentes em um ambiente onde o acesso à tecnologia precisa ser produtivo, seguro e pedagógico. Muitas plataformas educacionais disponíveis na internet carregam anúncios, rastreadores e interfaces confusas — barreiras reais para quem trabalha com turmas heterogêneas e tempo limitado.
-
-O Brinkeduca nasceu para preencher esse espaço: um portal leve, sem cadastro, sem banco de dados e sem dependências externas, que o educador pode abrir no navegador e usar imediatamente. Cada decisão de arquitetura e design foi tomada pensando em quem está do outro lado da tela — criança aprendendo e adulto mediando.
-
----
-
-## O que o projeto entrega
-
-| Área | Descrição |
-|------|-----------|
-| **Desafios educativos** | Quizzes de Matemática, Português e Inglês com 5, 10, 15 ou 20 perguntas, feedback imediato e ilustrações SVG |
-| **Jogos externos** | Vitrine curada de 11 portais educacionais com links diretos |
-| **Atividades desplugadas** | Propostas sem tela para Matemática, Português e Informática; hubs de Leitura e Pintura com portais externos |
-| **Navegação clara** | Botão "Voltar para o início" padronizado em todas as subpáginas |
+> **Plataforma web leve, lúdica e acessível desenvolvida especialmente para apoio pedagógico no Telecentro da Secretaria de Educação de Olinda.**
+> O Brinkeduca é um portal de atividades e desafios educativos interativos voltado para crianças de **5 a 12 anos** (do Maternal ao 5º ano do Ensino Fundamental). O projeto nasceu da necessidade real de oferecer um ambiente digital seguro, direto, sem distrações e otimizado para o cenário computacional do **Telecentro de Olinda**.
 
 ---
 
-## Decisões de arquitetura
+## Principais Recursos
 
-### PHP modular, sem framework
-
-O projeto usa PHP puro com separação clara de responsabilidades:
-
-- **Páginas** (`index.php`, `desafio.php`, `jogos.php`, `desplugadas.php`) — roteamento simples via query strings, sem `.htaccess` ou router
-- **Dados** (`includes/conteudo.php`, `desafios_20.php`, `desplugadas.php`) — arrays PHP como banco de conteúdo, fácil de editar por educadores
-- **Apresentação** (`includes/layout.php`) — cabeçalho e rodapé compartilhados via funções `render_header()` e `render_footer()`
-- **Utilitários** (`includes/funcoes.php`) — escape HTML, URLs, classificação de desempenho, seleção de imagens
-
-Essa escolha elimina dependências de Composer, facilita deploy em qualquer servidor com PHP 8+ e permite que o conteúdo seja atualizado editando arquivos `.php` diretamente.
-
-### Acessibilidade e baixo ruído visual
-
-- HTML semântico com `<details>`/`<summary>` para acordeões nativos (sem JavaScript)
-- Contraste adequado, tipografia legível (Segoe UI / Inter / Arial) e cantos arredondados suaves
-- Design System inspirado no painel WordPress: fundo cinza confortável, cards brancos, bordas sutis
-- Emoji nativo nas perguntas do quiz, com suporte a chave `emoji` no array da questão
-- Links externos com `rel="noopener noreferrer"` e `target="_blank"`
-
-### Privacidade
-
-- Sem cookies, sem analytics, sem rastreadores, sem anúncios
-- Nenhum dado pessoal é coletado ou armazenado
-- Formulários processados via POST na mesma página, sem persistência
+- *Nivelamento Pedagógico Progressivo:* Questões organizadas do Maternal ao 5º ano para acompanhar o desenvolvimento da criança.
+- *Curadoria de Robótica e Tecnologia:* Hub dedicado com acesso direto a plataformas renomadas como LEGO, Arduino, Makey Makey e Code Jr.
+- *Leveza Offline:* Uso inteligente de emojis nativos no lugar de imagens pesadas, garantindo carregamento instantâneo e operação sem gargalos de internet.
+- *Acessibilidade:* Design responsivo focado em usabilidade para crianças, com tipografia legível e botões amplos.
 
 ---
 
-## Estrutura do projeto
+## Estrutura do Projeto
 
-```
-projeto-telecentro/
-├── index.php                  # Página inicial — matérias e seleção de dificuldade
-├── desafio.php                # Quiz com seletor de dificuldade e feedback
-├── jogos.php                    # Vitrine de sites de jogos educativos
-├── desplugadas.php              # Atividades sem tela e hubs de Leitura/Pintura
-├── includes/
-│   ├── layout.php               # Cabeçalho, rodapé e botão de retorno
-│   ├── funcoes.php              # Funções auxiliares
-│   ├── conteudo.php               # Configuração do site e matérias
-│   ├── desafios_20.php            # Banco de 60 perguntas (20 por matéria)
-│   └── desplugadas.php            # Banco de atividades e portais externos
-└── assets/
-    ├── css/style.css              # Design System completo
-    └── img/quiz/                  # Ilustrações SVG para o quiz
+```text
+brinkeduca/
+├── 📁 includes/            # Componentes reutilizáveis (cabeçalho, rodapé, dados de questões)
+│   ├── header.php          # Cabeçalho com logo e navegação
+│   ├── footer.php          # Rodapé com créditos e link do GitHub
+│   └── conteudo_maternal.php # Banco de dados das questões por ano escolar
+├── 📄 index.php            # Página inicial (seleção de anos, matérias e quantidade)
+├── 📄 atividade.php        # Tela dinâmica do quiz / exercícios
+├── 📄 atividades-plugadas.php # Hub de robótica e links externos
+├── 🖼️ logo.png             # Logotipo do portal
+└── 📄 README.md            # Documentação do projeto
 ```
 
 ---
 
-## Como rodar localmente
+## Como Usar
 
-Requisito: PHP 8.0 ou superior.
+1. Clone o repositório:
 
 ```bash
-cd projeto-telecentro
+git clone https://github.com/usuario/brinkeduca.git
+```
+
+2. Acesse a pasta do projeto:
+
+```bash
+cd brinkeduca
+```
+
+3. Inicie um servidor local com PHP:
+
+```bash
 php -S localhost:8000
 ```
 
-Abra [http://localhost:8000](http://localhost:8000) no navegador.
+4. Abra o projeto no navegador:
 
-Para deploy em produção, basta copiar os arquivos para um diretório servido por Apache ou Nginx com suporte a PHP.
+```bash
+http://localhost:8000
+```
 
 ---
 
-## Desenvolvedora
+## Hospedagem
 
-**Maria Eduarda** — [github.com/Maria-Eduarda2911](https://github.com/Maria-Eduarda2911)
+O projeto foi pensado para funcionar de forma eficiente em servidores Apache/PHP, com foco em leveza, estabilidade e compatibilidade com ambientes compartilhados. Atualmente, o Brinkeduca encontra-se publicado na hospedagem gratuita **InfinityFree**, utilizando o diretório padrão **/htdocs** para armazenamento dos arquivos do portal.
 
-Projeto criado com carinho para ser utilizado no Telecentro da Secretaria de Educação de Olinda.
+Essa configuração garante uma implantação simples e acessível para ambientes educacionais com recursos limitados.
+
+---
+
+## Contribuições
+
+Contribuições são bem-vindas! Para colaborar com o projeto, siga estas diretrizes:
+
+- Mantenha o foco em acessibilidade e experiência educativa.
+- Preserve a linguagem clara, simples e voltada ao público infantil.
+- Teste as alterações localmente antes de enviar um pull request.
+- Documente mudanças relevantes quando houver atualização de conteúdo ou estrutura.
 
 ---
 
 ## Licença
 
-Projeto educacional de uso livre no contexto do Telecentro de Olinda.
+Este projeto é distribuído para fins educacionais e comunitários, com foco em apoio pedagógico e democratização do acesso à tecnologia na educação.
+
+---
+
+## Agradecimentos
+
+Agradecemos à equipe do **Telecentro de Olinda** por tornar esse projeto possível, além de todo o apoio pedagógico e institucional que inspirou a criação do Brinkeduca.
+
+---
+
+## Autoria
+
+**Maria Eduarda**
+
+[![GitHub](https://img.shields.io/badge/GitHub-Maria%20Eduarda-181717?style=flat-square&logo=github)](https://github.com/Maria-Eduarda2911)
