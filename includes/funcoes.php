@@ -45,6 +45,48 @@ function quantidade_valida(int $quantidade): int
     return in_array($quantidade, $permitidas, true) ? $quantidade : 5;
 }
 
+function percentual(int $acertos, int $total): int
+{
+    if ($total === 0) {
+        return 0;
+    }
+    return (int) round(($acertos / $total) * 100);
+}
+
+function emoji_desempenho(int $acertos, int $total): string
+{
+    $p = percentual($acertos, $total);
+    if ($p >= 90) return '🏆';
+    if ($p >= 70) return '🎉';
+    if ($p >= 50) return '👍';
+    if ($p >= 30) return '💪';
+    return '🌈';
+}
+
+function mensagem_motivacional(int $acertos, int $total): string
+{
+    $p = percentual($acertos, $total);
+    if ($total === 0) {
+        return 'Vamos começar?';
+    }
+    if ($p === 100) {
+        return 'Perfeito! Você gabaritou. Que aluno(a) incrível! 🎊';
+    }
+    if ($p >= 90) {
+        return 'Excelente! Você está quase lá, continue assim! ⭐';
+    }
+    if ($p >= 70) {
+        return 'Muito bom! Com um pouco mais de prática você chega lá! 🚀';
+    }
+    if ($p >= 50) {
+        return 'Bom trabalho! Revise as respostas e tente mais uma vez! 📖';
+    }
+    if ($p >= 30) {
+        return 'Continue praticando! Cada erro é uma chance de aprender. 🌱';
+    }
+    return 'Não desista! O importante é tentar e aprender com cada pergunta. 💖';
+}
+
 function busca_google_imagens_url(string $termo): string
 {
     return 'https://www.google.com/search?tbm=isch&q=' . rawurlencode($termo);
