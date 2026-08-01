@@ -24,7 +24,7 @@ LINK DO PROJETO --> https://brinkeduca.infinityfree.me/index.php?i=1
 > **Plataforma web leve, lúdica e acessível desenvolvida especialmente para apoio pedagógico no Telecentro da Secretaria de Educação de Olinda.**
 > O Brinkeduca é um portal de atividades e desafios educativos interativos voltado para crianças de **5 a 12 anos** (do Maternal ao 5º ano do Ensino Fundamental). O projeto nasceu da necessidade real de oferecer um ambiente digital seguro, direto, sem distrações e otimizado para o cenário computacional do **Telecentro de Olinda**.
 
-<img width="1342" height="855" alt="image" src="https://github.com/user-attachments/assets/a0cb8288-fbe9-4dd6-8523-7c83b0292e5a" />
+<img width="1839" height="2474" alt="Desafios-educativos-Brinkeduca-07-31-2026_11_46_PM" src="https://github.com/user-attachments/assets/80a23ad0-ee0b-4a36-b365-847fa3336e62" />
 
 ---
 
